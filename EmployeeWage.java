@@ -2,26 +2,26 @@ import java.util.Random;
   
 	public class EmployeeWage{   
 		public static void main(String args[]){
-		
+					
 			int empRateperHour=50,empHour=0,sallary=0;
+			int fullTime=1,partTime=0;
       	Random rand = new Random(); 
-        	int randomNum = rand.nextInt(1000); 
+        	int randomNum = rand.nextInt(1000)%3; 
 
-			if(randomNum%2==1) {
-
-				System.out.println("Employee Present");
+			if(randomNum==1) {
 				empHour=8;
-				sallary=empHour*empRateperHour;
-				System.out.println("Sallary="+sallary);
 				
 			}
-			else{
-
-				System.out.println("Employee Absent");
-				sallary=0;
-				System.out.println("Sallary=0");
+			else if(randomNum==0){
+				empHour=4;
 
 			}
+			else {
+				empHour=0;
+
+			}
+		 	System.out.println("Sallry="+empHour*empRateperHour);
 		}
+
 	}
 
