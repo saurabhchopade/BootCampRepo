@@ -4,12 +4,11 @@ public class EmployeeWage{
 			int empRateperHour=50,empHour=0,sallary=0,totalWage=0;
 			int empRateperHour=50,empHour=0,sallary=0,totalWage=0,totalWorkingHour=0;
 			int fullTime=1,partTime=0;
-
-			for(int month=1;month<=20;month++) {
+			
 			for(int month=1;month<=50;month++) {
 
-      		Random rand = new Random(); 
-        		int randomNum = rand.nextInt(1000)%3; 	
+      				Random rand = new Random(); 
+        			int randomNum = rand.nextInt(1000)%3; 	
 				switch(randomNum){
 				case 0:
 					empHour=8;
@@ -20,14 +19,15 @@ public class EmployeeWage{
 				default:
 					empHour=0;
 				}
-		 	sallary=empHour*empRateperHour;
-			totalWage=totalWage+sallary;
-			totalWorkingHour=totalWorkingHour+empHour;
-			if(totalWorkingHour==100){
-				System.out.println("Totatreached"+totalWorkingHour);
-				System.out.println("TotalWage="+totalWage);  
-				System.exit(0);
-			}
+				
+		 		sallary=empHour*empRateperHour;
+				totalWage=totalWage+sallary;
+				totalWorkingHour=totalWorkingHour+empHour;
+				if(totalWorkingHour==100){
+					System.out.println("Totatreached"+totalWorkingHour);
+					System.out.println("TotalWage="+totalWage);  
+					System.exit(0);
+				}
 
 			}
 			System.out.println("TotalWage="+totalWage);
