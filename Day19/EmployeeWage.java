@@ -33,3 +33,5 @@ public class EmployeeWage{
 			System.out.println("TotalWage="+totalWage);
 		}
 	}
+  
+
