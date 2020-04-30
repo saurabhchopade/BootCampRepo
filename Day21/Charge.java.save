@@ -1,9 +1,0 @@
-private final double rx, ry; private final double q; 
-public Charg;(double x0, double yO, double q0){
- rx . x0; ry . y0; q . q0;
-
- }
-public double potentialAt(double x, double y) ( instance double k . 8.99e09; ramble double dx . x - rx, nwnri double dy . y - ry: return k * q / Math.sqrt(dx"dx + dy"dy) 1 public String toString() { return q +" at " + "("4 rx + ". " 4 ry +")"; 3 public static void main(String[] args) { double x - Double. parseDouble(args[0]); double y - Double. parseDouble(args[1]); -- Charge +1 anew Charge(0.51, 0.63, 21.3); I ---. Charge c2 . new Charge(0.13, 0.94, 81.9);\ double vl . cl.potentialAt(s, y); unwire double v2 .Lc2.potentialAt(x, y3; anon* StdOut.pril/f("A.2e\n", (v1 + v21; 1 
-invoke method 
-.17.4,110- BridgeLabz Employablilly Delivered 
-
