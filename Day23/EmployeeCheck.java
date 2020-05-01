@@ -1,31 +1,40 @@
+import java.util.*;
 import java.util.Random;
-public class EmployeeCheck{
-
+public class EmployeeCheck implements IComputeEmpWage{
 	//Constants
 	private static final int FULL_TIME=1,PART_TIME=0;
 	private int noOfCompany=0;
 	private CompanyEmpWage[] companyEmpWageArray;
 
-	//Constructor 
-	public EmployeeCheck(){
-	//created Array Of Five 
-	companyEmpWageArray =new CompanyEmpWage[5];
+	//declaring Collection 
+	private LinkedList<CompanyEmpWage> wageList;
+	private Map<String,CompanyEmpWage> wageMap;
 
+	
+	//Constructor  
+	public EmployeeCheck(){
+		wageList=new LinkedList<>();
+		wageMap=new HashMap<>();
 	}
 
 	private void addCompanyEmpWage(String company, int ratePerHour, int maxWorkingDays, int maxWorkingHours ){
 		//calling Constructor of CompanyEmpWage
-		companyEmpWageArray[noOfCompany] = new CompanyEmpWage(company, ratePerHour,maxWorkingDays, maxWorkingHours);
-		//Counter Incresing Each Function call
-		noOfCompany++;
+		CompanyEmpWage companyEmpWage= new CompanyEmpWage(company, ratePerHour,maxWorkingDays, maxWorkingHours);
+		wageList.add(companyEmpWage);
+		wageMap.put(company,companyEmpWage);
 	}
 	
 	private void  computeEmpWage(){
-		for(int i=0;i<noOfCompany;i++){
-
-			companyEmpWageArray[i].setTotalEmpWage(this.computeEmpWage(companyEmpWageArray[i]));
+		for(int i=0;i<wageList.size();i++){
+			CompanyEmpWage companyEmpWage=wageList.get(i);
+			companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
+			System.out.println(companyEmpWage);			
 
 		}
+	}
+
+	private int getTotalempWage(String company){
+		return wageMap.get(company).totalWage;
 	}
 
 	//To compute Total Wage
@@ -63,9 +72,10 @@ public class EmployeeCheck{
 
       public static void main(String args[]){
       //Here 50 is ratePerHour 2 is working days /10 total Working Hours
-      final EmployeeCheck obj=new EmployeeCheck();
+      EmployeeCheck  obj=new EmployeeCheck();
       obj.addCompanyEmpWage("Dmart",50,2,10);
 		obj.addCompanyEmpWage("BigBazar",70,3,10);
       obj.computeEmpWage();
+
       }
 }
