@@ -1,4 +1,12 @@
-public class CompanyEmpWage {
+public interface IComputeEmpWage{
+   public void addCompanyEmpWage(String company,int ratePerHour,int maxWorkingDays,int maxWorkingHours);
+   public void computeEmpWage();
+   public int getTotalWage(String company);
+
+   }  
+
+
+ class CompanyEmpWage {
 	//Variable Declaration
 	public final String company;
  	public final int ratePerHour;
